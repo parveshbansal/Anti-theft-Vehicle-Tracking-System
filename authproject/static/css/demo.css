@@ -1,0 +1,15 @@
+.container .jumbotron{
+	text-align: center;
+	margin: auto;
+	margin-top:250px;
+	background: yellow;
+}
+body{
+	background:skyblue;
+}
+h1{
+	text-align: center;
+}
+h2{
+text-align: center;
+}

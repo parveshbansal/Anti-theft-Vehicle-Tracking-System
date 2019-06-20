@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css'%}">
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script
+  src="http://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>  
+  <title></title>
+</head>
+<body>
+	<h1>Vehicle Tracking System</h1><hr>
+	<h2>Engine Key</h2>
+<div class="container">
+	<div class="jumbotron">
+<form action='/engine/' method="POST">
+  {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary btn-success btn-lg" type="submit">Start</button>
+</form>
+</div>
+</div>
+ <script type="text/javascript" src="{%static 'js/img.js' %}"></script>
+</body>
+</html>

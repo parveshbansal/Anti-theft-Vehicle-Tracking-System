@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+{%load staticfiles %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <title>{{user.username|title}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="{% static 'assets/vendor/nucleo/css/nucleo.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'%}" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="{% static 'assets/css/argon.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script
+  src="http://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="main-content">
+    <!-- Top navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block">Vehicle Tracking system.</a>
+        <!-- Form -->
+        <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+          </div>
+        </form>
+        <!-- User -->
+        <ul class="navbar-nav align-items-center d-none d-md-flex">
+          <li class="nav-item dropdown">
+            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="media align-items-center">
+                  <span class="avatar avatar-sm rounded-circle">
+                  <img alt="Image placeholder" src="{%static 'assets/img/theme/team-4-800x800.jpg' %}">
+                </span>
+                <div class="media-body ml-2 d-none d-lg-block">
+                  <span class="mb-0 text-sm  font-weight-bold">{{user.username}}</span>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+              <div class=" dropdown-header noti-title">
+                <h6 class="text-overflow m-0">Welcome!</h6>
+              </div>
+              <a href="/profile" class="dropdown-item">
+                <i class="ni ni-single-02"></i>
+                <span>My profile</span>
+              </a>
+                <a href="/" class="dropdown-item">
+                <i class="ni ni-single-02"></i>
+                <span>Home</span>
+              </a>
+              </a>
+                <a href="/logout" class="dropdown-item">
+                <i class="ni ni-single-02"></i>
+                <span>logout</span>
+              </a>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->  <div class=" dropdown-header noti-title">
+                <h3 class="text m-0" style="color: white">Control Your Vehicle</h3>
+              </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">{{qs.gadicompanyname}}</h5>
+                      <span class="h2 font-weight-bold mb-0">{{qs.gadiname}}</span>
+                      
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="ni ni-bus-front-12 text-info"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Plate Number</h5>
+                      <span class="h2 font-weight-bold mb-0">{{qs.gadino}}</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="ni ni-pin-3 text-primary"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Parking</h5>
+                    {%if a == 0%}
+                    <a href="/park" class="btn btn-sm btn-success">Disable</a>
+                    {%else%}
+                    <a href="/park" class="btn btn-sm btn-primary">Enable</a>
+                    {%endif%}
+                  </form>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                        <i class="ni ni-square-pin text-success"></i> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0" >Ignition status</h5>
+                      {%if k == 1 %}
+                    <button>On</button><a href="/stop" class="btn btn-primary btn-sm">Click here to stop</a>
+                    {%else%}
+                    <button>OFF</button><a href="/stop" class="btn btn-primary btn-sm">Click here to stop</a>
+                    {%endif%}
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="ni ni-sound-wave text-primary"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col">
+                        <div class=" dropdown-header noti-title">
+                <h3 class="text m-0" style="color: white">Map Showing Live location</h3>
+              </div>
+          
+          <div class="card shadow border-0">
+            <div id="map" class="map-canvas" style="height: 600px;">
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+  <!-- Optional JS -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd3PjUqq81lIOfBPYXrQGWwK5T4ystZjA"></script>
+  <!-- Argon JS -->
+  <script src="{%static 'assets/js/argon.js' %}"></script>
+      <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe6X5samNvqXMmS5OibV6_6takyrRpqBw"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+
+      var map;
+        var x;
+        function loadmaps(){
+            $.getJSON("https://api.thingspeak.com/channels/699568/fields/1/last.json?api_key=6D94WL0BJRIPI2PF", function(result){
+        	
+            var m = result;
+
+           x=Number(m.field1);
+           console.log(x);
+           console.log("hello");
+            //x=29.1492;
+                           //alert(x);
+
+        });
+            $.getJSON("https://api.thingspeak.com/channels/699568/fields/2/last.json?api_key=6D94WL0BJRIPI2PF", function(result){
+        	
+            var m = result;
+            y=Number(m.field2);
+            //alert(y);
+             // y=75.7223;  
+                
+        }).done(function() {
+            
+                initialize();
+    });
+            
+        }
+        window.setInterval(function(){
+        loadmaps();
+            }, 9000);
+      function initialize() {
+          //alert(y);
+        var mapOptions = {
+          zoom: 18,
+          center: {lat: x, lng: y}
+        };
+        map = new google.maps.Map(document.getElementById('map'),
+            mapOptions);
+
+        var marker = new google.maps.Marker({
+          position: {lat: x, lng: y},
+          map: map
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: '<p>Marker Location:' + marker.getPosition() + '</p>'
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+   
+ <script type="text/javascript" src="{%static 'js/img1.js' %}"></script>
+</body>
+
+</html>
